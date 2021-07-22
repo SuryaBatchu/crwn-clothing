@@ -14,4 +14,4 @@ const CollectionPreview = ({title,items})=>(
 
    </div> 
 );
-export default CollectionPreview;
+export default CollectionPreview; 
