@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import CartItem from '../../components/cart-item/cart-item.component';
 import CheckoutItem from '../../components/checkout-item/checkout-item.coomponent';
+import StripeCheckoutButtom from '../../components/stripe-button/stripe-button.component';
+
 import { selectCartItems } from '../../redux/cart/cart.selectors';
 import { selectCartTotal } from '../../redux/cart/cart.selectors';
 import './checkout.styles.scss';
@@ -29,9 +31,16 @@ const CheckoutPage = ({cartItems,total}) => (
         {cartItems.map(cartItem =>(
              <CheckoutItem key={cartItem.id} cartItem={cartItem}/>
         ))}
-        <div className='total'>
-           <span>TOTAL: ${total}</span>
-        </div>
+            <div className='total'>
+                 <span>TOTAL: ${total}</span>
+            </div>
+            <div className='test-warning'>
+                *For fake payment use these credit card numbers* 
+                <br/>
+                4242 4242 4242 4242 -exp:01/22 -cvv:123
+            </div>
+           <StripeCheckoutButtom price ={total} />
+        
     </div>
 );
 const mapStateToProps = createStructuredSelector({

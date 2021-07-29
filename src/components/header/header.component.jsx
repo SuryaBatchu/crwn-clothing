@@ -17,7 +17,7 @@ const Header = ( {currentUser,hidden,toggleCartHidden}) =>(
         <Link className='logo-container'to="/"  >
         <Logo className='logo'/>
         </Link>
-        <div className = 'options'  {...hidden? null:toggleCartHidden} >
+        <div className = 'options'>
        
             
         <Link className='option' to='/shop' >
